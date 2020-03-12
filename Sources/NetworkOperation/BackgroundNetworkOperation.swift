@@ -21,7 +21,7 @@ public class BackgroundNetworkOperation: Operation {
     public private(set)  var error:   Error?
     public internal(set) var fileURL: URL? // Local file URL
     /// If file was already downloaded, then response will return nil.
-    public var response: URLResponse? { task?.response }
+    public var response: HTTPURLResponse? { task?.response as? HTTPURLResponse }
 
     private let request:             URLRequest
     private let finishBlock:         FinishBlock
@@ -32,9 +32,7 @@ public class BackgroundNetworkOperation: Operation {
     }
 
     public internal(set) var progress: Float = 0.0 {
-        didSet {
-            downloadObservation?(self, progress)
-        }
+        didSet { downloadObservation?(self, progress) }
     }
 
     internal static var registeredOperations = [(url: URL, operation: BackgroundNetworkOperation)]()
