@@ -59,8 +59,7 @@ public class BackgroundNetworkOperation: Operation {
 
     internal static let tmpDir = URL(filename: Directory.tmpDir, relativeTo: URL(fileURLWithPath: NSTemporaryDirectory()))!
 
-    /// - Note: WebServiceBackgroundDownloadOperation should be used only using .perform(). Adding it to queue causes it to leak sometimes when it's cancelled.
-    private init(request: URLRequest, dependencies: [Operation]? = nil, downloadObservation: ProgressObservation? = nil, finishBlock: @escaping FinishBlock) {
+    public init(request: URLRequest, dependencies: [Operation]? = nil, downloadObservation: ProgressObservation? = nil, finishBlock: @escaping FinishBlock) {
 
         BackgroundNetworkOperation.setup()
 
