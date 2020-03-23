@@ -9,6 +9,8 @@
 import Foundation
 
 public extension BackgroundNetworkOperation {
+    
     typealias ProgressObservation = (_ operation: BackgroundNetworkOperation, _ progress: Float) -> Void
     typealias FinishBlock = (_ operation: BackgroundNetworkOperation) -> Void
+    
 }

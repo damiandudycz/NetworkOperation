@@ -10,6 +10,7 @@ import Foundation
 import CommonCrypto
 
 extension BackgroundNetworkOperation {
+    
     // MARK: - Helper types.
     
     public static func localFileURL(for url: URL) -> URL {
@@ -72,6 +73,7 @@ extension BackgroundNetworkOperation {
             }
         }
     }
+    
 }
 
 extension String {

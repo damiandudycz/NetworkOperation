@@ -9,10 +9,12 @@
 import Foundation
 
 public extension BackgroundNetworkOperation {
+    
     enum OperationError: Error {
         case operationWasCanceledBeforeStart
         case startingConditionFailed
         case failedToInitializeRequest
         case noResponse
     }
+    
 }

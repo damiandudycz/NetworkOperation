@@ -184,6 +184,7 @@ public class BackgroundNetworkOperation: Operation {
 }
 
 extension BackgroundNetworkOperation {
+    
     // MARK: - Operation subclassing implementation.
 
     override public var isAsynchronous: Bool { true               }
@@ -224,4 +225,5 @@ extension BackgroundNetworkOperation {
             }
         }
     }
+    
 }
