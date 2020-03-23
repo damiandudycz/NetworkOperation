@@ -2,7 +2,7 @@
 //  BackgroundNetworkOperation.swift
 //  NetworkOperation
 //
-//  Created by Damian Dudycz on 11.03.2018.
+//  Created by Damian Dudycz on 11/03/2018.
 //  Copyright © 2018 Damian Dudycz. All rights reserved.
 //
 
