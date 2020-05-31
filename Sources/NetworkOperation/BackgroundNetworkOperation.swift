@@ -149,7 +149,7 @@ public class BackgroundNetworkOperation: Operation {
             progress = 1.0
             taskDone(withError: nil)
             
-            BackgroundNetworkOperation.registeredOperations = BackgroundNetworkOperation.registeredOperations.filter { _, operation in operation != self }
+            BackgroundNetworkOperation.registeredOperations = BackgroundNetworkOperation.registeredOperations.filter { (_, operation) in operation != self }
             
             return
         }
