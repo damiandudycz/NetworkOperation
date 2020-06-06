@@ -187,11 +187,11 @@ extension BackgroundNetworkOperation {
     
     // MARK: - Operation subclassing implementation.
 
-    override public var isAsynchronous: Bool { true               }
-    override public var isExecuting:    Bool { operationExecuting }
-    override public var isFinished:     Bool { operationFinished  }
+    public override var isAsynchronous: Bool { true               }
+    public override var isExecuting:    Bool { operationExecuting }
+    public override var isFinished:     Bool { operationFinished  }
 
-    override public func start() {
+    public override func start() {
         operationExecuting = true
 
         BackgroundNetworkOperation.queue.sync {
