@@ -1,3 +1,3 @@
 # NetworkOperation
 
-A description of this package.
+Use network operation to perform file downloads that should continue in background.
