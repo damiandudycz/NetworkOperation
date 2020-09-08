@@ -81,11 +81,11 @@ public class BackgroundNetworkOperation: Operation {
 
     internal func taskDone(withError error: Error?) {
         self.error = error
-        DispatchQueue.main.sync {
+        DispatchQueue.main.sync { [self] in
             if BackgroundNetworkOperation.tasks.count <= 1 {
                 BackgroundNetworkOperation.session.reset { }
             }
-            self.finishBlock(self)
+            finishBlock(self)
         }
         operationExecuting = false
         operationFinished = true
@@ -219,7 +219,7 @@ extension BackgroundNetworkOperation {
                 url.absoluteString == self.url.absoluteString && operation != self
             }.isEmpty
             if !similarOperationsExists {
-                BackgroundNetworkOperation.tasks.filter { $0.originalRequest?.url == self.url }.forEach {
+                BackgroundNetworkOperation.tasks.filter { [self] in $0.originalRequest?.url == url }.forEach {
                     $0.cancel()
                 }
             }
